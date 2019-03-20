@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>onigiri - katakana</title>
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+  <div id="content">
+    <div class="header">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">about&nbsp;&nbsp;&nbsp;</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="hiragana.html">hiragana</a>
+        </li>
+        <li class="nav-icon">
+          <a href="index.html"><img src="images/icon_onigiri.png" style="width:45px;height:40px; alt="home"></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="katakana.html">katakana</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">contact</a>
+        </li>
+        </ul>
+    </div>
+    <audio id="audio"></audio>
+      <div id="chart">
+        <div class="line1">
+          <button type="button" disabled class="one">n</button><!--
+          --><button type="button" disabled class="two">・</button><!--
+            --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">w</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+              --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">r</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+              --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">y</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+              --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">m</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+              --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">h</button><!--
+            --><button type="button" disabled class="two">b</button><!--
+            --><button type="button" disabled class="three">p</button><!--
+            --><button type="button" disabled class="one">n</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+              --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">t</button><!--
+            --><button type="button" disabled class="two">d</button><!--
+            --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">s</button><!--
+            --><button type="button" disabled class="two">z</button><!--
+            --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">k</button><!--
+            --><button type="button" disabled class="two">g</button><!--
+            --><button type="button" disabled class="three">・</button><!--
+            --><button type="button" disabled class="one">・</button><!--
+            --><button type="button" disabled class="two">・</button><!--
+            --><button type="button" disabled class="three">・</button><!--
+            --><button class="toggle" id="toggle-one" data-toggle="tooltip" data-placement="right" title="add a dakuten ﾞ to change consonants from unvoiced to voiced" data-animation="false">"</button><!--
+            --><button class="toggle" id="toggle-two"data-toggle="tooltip" data-placement="right" title="add a handakuten ﾟ to change 'h' to 'p'" data-animation="false">˚</button><!--
+            --><button class="toggle" id="toggle-three">⟲</button>
+          </div>
+        <div class="line2">
+          <button onclick="play('audio/n.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;n')" onmouseout="defaultText()" class="one">ん</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/wa.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;wa')" onmouseout="defaultText()" class="one">わ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ra.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ra')" onmouseout="defaultText()" class="one">ら</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ya.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ya')" onmouseout="defaultText()" class="one">や</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ma.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ma')" onmouseout="defaultText()" class="one">ま</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ha.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ha')" onmouseout="defaultText()" class="one">は</button><!--
+          --><button onclick="play('audio/ba.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ba')" onmouseout="defaultText()" class="two">ば</button><!--
+          --><button onclick="play('audio/pa.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;pa')" onmouseout="defaultText()" class="three">ぱ</button><!--
+          --><button onclick="play('audio/na.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;na')" onmouseout="defaultText()" class="one">な</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ta.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ta')" onmouseout="defaultText()" class="one">た</button><!--
+          --><button onclick="play('audio/da.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;da')" onmouseout="defaultText()" class="two">だ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/sa.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;sa')" onmouseout="defaultText()" class="one">さ</button><!--
+          --><button onclick="play('audio/za.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;za')" onmouseout="defaultText()" class="two">ざ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ka.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ka')" onmouseout="defaultText()" class="one">か</button><!--
+          --><button onclick="play('audio/ga.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ga')" onmouseout="defaultText()" class="two">が</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/a.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;a')" onmouseout="defaultText()" class="one">あ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>a</button><!--
+          --></div>
+        <div class="line3">
+          <button type="button" disabled>&nbsp;</button><!--
+          --><button type="button" disabled>&nbsp;</button><!--
+          --><button onclick="play('audio/ri.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ri')" onmouseout="defaultText()" class="one">り</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>&nbsp;</button><!--
+          --><button onclick="play('audio/mi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;mi')" onmouseout="defaultText()" class="one">み</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/hi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;hi')" onmouseout="defaultText()" class="one">ひ</button><!--
+          --><button onclick="play('audio/bi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;bi')" onmouseout="defaultText()" class="two">び</button><!--
+          --><button onclick="play('audio/pi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;pi')" onmouseout="defaultText()" class="three">ぴ</button><!--
+          --><button onclick="play('audio/ni.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ni')" onmouseout="defaultText()" class="one">に</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/chi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;chi*')" onmouseout="defaultText()" class="one">ち</button><!--
+          --><button onclick="play('audio/dzi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;dzi*')" onmouseout="defaultText()" class="two">ぢ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/shi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;shi*')" onmouseout="defaultText()" class="one">し</button><!--
+          --><button onclick="play('audio/ji.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ji*')" onmouseout="defaultText()" class="two">じ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ki.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ki')" onmouseout="defaultText()" class="one">き</button><!--
+          --><button onclick="play('audio/gi.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;gi')" onmouseout="defaultText()" class="two">ぎ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/i.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;i')" onmouseout="defaultText()" class="one">い</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>i</button><!--
+          --></div>
+        <div class="line4">
+          <button type="button" id="text-display" disabled>&nbsp;</button><!--
+          --><button type="button" disabled>&nbsp;</button><!--
+          --><button onclick="play('audio/ru.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ru')" onmouseout="defaultText()" class="one">る</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/yu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;yu')" onmouseout="defaultText()" class="one">ゆ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/mu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;mu')" onmouseout="defaultText()" class="one">む</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/fu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;fu*')" onmouseout="defaultText()" class="one">ふ</button><!--
+          --><button onclick="play('audio/bu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;bu')" onmouseout="defaultText()" class="two">ぶ</button><!--
+          --><button onclick="play('audio/pu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;pu')" onmouseout="defaultText()" class="three">ぷ</button><!--
+          --><button onclick="play('audio/nu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;nu')" onmouseout="defaultText()" class="one">ぬ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/tsu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;tsu*')" onmouseout="defaultText()" class="one">つ</button><!--
+          --><button onclick="play('audio/dzu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;dzu*')" onmouseout="defaultText()" class="two">づ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/su.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;su')" onmouseout="defaultText()" class="one">す</button><!--
+          --><button onclick="play('audio/zu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;zu')" onmouseout="defaultText()" class="two">ず</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ku.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ku')" onmouseout="defaultText()" class="one">く</button><!--
+          --><button onclick="play('audio/gu.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;gu')" onmouseout="defaultText()" class="two">ぐ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/u.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;u')" onmouseout="defaultText()" class="one">う</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>u</button><!--
+          --></div>
+        <div class="line5">
+          <button type="button" disabled>&nbsp;</button><!--
+          --><button type="button" disabled>&nbsp;</button><!--
+          --><button onclick="play('audio/re.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;re')" onmouseout="defaultText()" class="one">れ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled class="one">&nbsp;</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/me.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;me')" onmouseout="defaultText()" class="one">め</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/he.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;he')" onmouseout="defaultText()" class="one">へ</button><!--
+          --><button onclick="play('audio/be.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;be')" onmouseout="defaultText()" class="two">べ</button><!--
+          --><button onclick="play('audio/pe.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;pe')" onmouseout="defaultText()" class="three">ぺ</button><!--
+          --><button onclick="play('audio/ne.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ne')" onmouseout="defaultText()" class="one">ね</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/te.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;te')" onmouseout="defaultText()" class="one">て</button><!--
+          --><button onclick="play('audio/de.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;de')" onmouseout="defaultText()" class="two">で</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/se.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;se')" onmouseout="defaultText()" class="one">せ</button><!--
+          --><button onclick="play('audio/ze.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ze')" onmouseout="defaultText()" class="two">ぜ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ke.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ke')" onmouseout="defaultText()" class="one">け</button><!--
+          --><button onclick="play('audio/ge.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ge')" onmouseout="defaultText()" class="two">げ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/e.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;e')" onmouseout="defaultText()" class="one">え</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>e</button><!--
+          --></div>
+        <div class="line6">
+          <button type="button" disabled>&nbsp;</button><!--
+          --><button onclick="play('audio/wo.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;wo')" onmouseout="defaultText()" class="one">を</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ro.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ro')" onmouseout="defaultText()" class="one">ろ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/yo.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;yo')" onmouseout="defaultText()" class="one">よ</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/mo.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;mo')" onmouseout="defaultText()" class="one">も</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ho.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ho')" onmouseout="defaultText()" class="one">ほ</button><!--
+          --><button onclick="play('audio/bo.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;bo')" onmouseout="defaultText()" class="two">ぼ</button><!--
+          --><button onclick="play('audio/po.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;po')" onmouseout="defaultText()" class="three">ぽ</button><!--
+          --><button onclick="play('audio/no.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;no')" onmouseout="defaultText()" class="one">の</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/to.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;to')" onmouseout="defaultText()" class="one">と</button><!--
+          --><button onclick="play('audio/do.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;do')" onmouseout="defaultText()" class="two">ど</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/so.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;so')" onmouseout="defaultText()" class="one">そ</button><!--
+          --><button onclick="play('audio/zo.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;zo')" onmouseout="defaultText()" class="two">ぞ</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/ko.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;ko')" onmouseout="defaultText()" class="one">こ</button><!--
+          --><button onclick="play('audio/go.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;go')" onmouseout="defaultText()" class="two">ご</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button onclick="play('audio/o.mp3')" onmouseover="changeText('&nbsp;&nbsp;&nbsp;o')" onmouseout="defaultText()" class="one">お</button><!--
+          --><button type="button" disabled class="two">&nbsp;</button><!--
+          --><button type="button" disabled class="three">&nbsp;</button><!--
+          --><button type="button" disabled>o</button><!--
+          --></div>
+        </div>
+  </div>
+  <div id="ruler"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+  <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
